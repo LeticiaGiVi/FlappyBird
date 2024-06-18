@@ -4,48 +4,20 @@ using UnityEngine;
 
 public class obstaculo : MonoBehaviour
 {
-
+    [SerializeField]
+    public float velocidade = 1.9f;
 
     [SerializeField]
-    private float velocidade ;
-
-    [SerializeField]
-    private float variacaoY;
-
-    private Vector3 posicaopassaro;
-
-    private UIControler controladorUI;
-
-    private bool pontuei;
+    public float varairposicaoY;
 
     private void Awake()
     {
-        this.transform.Translate(Vector3.up * Random.Range(-variacaoY, variacaoY));
-    }
-
-    private void Start()
-    {
-        this.posicaopassaro = GameObject.FindObjectOfType<passaro>().transform.position;
-        this.controladorUI =  GameObject.FindObjectOfType<UIControler>();
-    }
-
+        this.transform.Translate(Vector3.up * Random.Range(-varairposicaoY,varairposicaoY));
+}
+    // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(Vector3.left * this.velocidade * Time.deltaTime);
-        if(!this.pontuei && this.transform.position.x < this.posicaopassaro.x)
-        {
-            this.controladorUI.AdicionarPontos();
-            this.pontuei = true;
-        }
-    }
+        this.transform.Translate(Vector3.left*velocidade* Time.deltaTime);
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        this.Destruir();
-    }
-
-    private void Destruir()
-    {
-        Destroy(this.gameObject);
     }
 }
