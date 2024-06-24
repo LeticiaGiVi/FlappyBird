@@ -8,11 +8,16 @@ public class passaro : MonoBehaviour
 
     public SistemaCoracao sistemaCoracao;
     private Diretor diretor;
+       private Vector3 posicaoInicial;
+
+       void Start(){
+            this.diretor = FindObjectOfType<Diretor>();
+       }
 
     private void Awake()
     {
         this.fisica = GetComponent<Rigidbody2D>();
-        this.diretor = FindObjectOfType<Diretor>();
+        this.posicaoInicial = this.transform.position;
 
     }
     void Update()
@@ -21,14 +26,21 @@ public class passaro : MonoBehaviour
         {
             this.Impulsionar();
         }
-        if (sistemaCoracao.vida <= 0)
+ if (sistemaCoracao != null && sistemaCoracao.vida <= 0)
+    {
+        if (diretor != null)
         {
             this.diretor.FinalizarJogo();
         }
+     }   
 
     }
     private void Impulsionar()
     {
         this.fisica.AddForce(Vector2.up*3,ForceMode2D.Impulse);
+    }
+    public void Reiniciar(){
+        this.transform.position = this.posicaoInicial;
+        this.fisica.simulated = true;
     }
 }

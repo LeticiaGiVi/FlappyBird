@@ -577,9 +577,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 3
   vidaMax: 3
-  coracao: []
-  cheio: {fileID: 0}
-  vazio: {fileID: 0}
+  coracao:
+  - {fileID: 821546670}
+  - {fileID: 2116260885}
+  - {fileID: 1485763671}
+  cheio: {fileID: 21300000, guid: e4eecb481c26e4aa29c44e04838b4793, type: 3}
+  vazio: {fileID: 21300000, guid: 58c2a2815eb674a9b96fa2de9a305a00, type: 3}
 --- !u!95 &831898430
 Animator:
   serializedVersion: 5
@@ -1418,6 +1421,7 @@ GameObject:
   - component: {fileID: 1917965163}
   - component: {fileID: 1917965166}
   - component: {fileID: 1917965165}
+  - component: {fileID: 1917965167}
   m_Layer: 0
   m_Name: chao
   m_TagString: Untagged
@@ -1550,6 +1554,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &1917965167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917965162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6726e399dc00941a8cc19b12af82e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coracao: {fileID: 831898429}
 --- !u!1 &1929929343
 GameObject:
   m_ObjectHideFlags: 0

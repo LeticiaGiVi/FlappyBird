@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Diretor : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject imagemGameOver;
-
-    public void FinalizarJogo()
-    {
-        Time.timeScale = 0;
-        this.imagemGameOver.SetActive(true);
-    }
+   [SerializeField]
+   private GameObject imagemGameOver;
+   private passaro passaro;
+   
+   private void Start(){
+     this.passaro = FindObjectOfType<passaro>();
+   }
+   public void FinalizarJogo(){
+       Time.timeScale = 0;
+       this.imagemGameOver.SetActive(true);
+   }
+   private void ReiniciarJogo(){
+       this.imagemGameOver.SetActive(false);
+       Time.timeScale = 1;
+       this.passaro.Reiniciar();
+   }
 }
