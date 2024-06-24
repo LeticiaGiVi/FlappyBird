@@ -6,19 +6,12 @@ using UnityEngine.UI;
 public class SistemaCoracao: MonoBehaviour
 
 {
-    public int vida;
-    public int vidaMax;
+    public int vida = 3;
+    public int vidaMax = 3;
 
     public Image[] coracao;
     public Sprite cheio;
     public Sprite vazio;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

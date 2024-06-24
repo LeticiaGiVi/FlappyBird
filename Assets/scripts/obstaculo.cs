@@ -10,9 +10,17 @@ public class obstaculo : MonoBehaviour
     [SerializeField]
     public float variacaoY = 2f;
 
+    [SerializeField]
+    private GameObject modelObstaculo;
+
     private void Awake()
     {
         this.transform.Translate(Vector3.up * Random.Range(-variacaoY, variacaoY));
+    }
+
+    private void Start()
+    {
+        GameObject.Instantiate(this.modelObstaculo, this.transform.position, Quaternion.identity);
     }
 
     void Update()

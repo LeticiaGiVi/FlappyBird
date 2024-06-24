@@ -5,7 +5,7 @@ using UnityEngine;
 public class Gerador_cereja : MonoBehaviour
 {
   [SerializeField]
-    private float tempoParaGerar;
+    private float tempoParaGerar = 7;
 
     private float cronometro;
 

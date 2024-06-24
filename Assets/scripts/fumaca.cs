@@ -6,10 +6,7 @@ public class fumaca : MonoBehaviour
 {
 public obstaculo obstaculo;
 
-    private void Awake()
-    {
-        this.transform.Translate(Vector3.up * Random.Range(-obstaculo.variacaoY, obstaculo.variacaoY));
-    }
+
 
     void Update()
     {

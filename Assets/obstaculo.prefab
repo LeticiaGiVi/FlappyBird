@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 1.8
   variacaoY: 2
+  modelObstaculo: {fileID: 2956483371892792692, guid: acc6073888b4db04da6392bc276ec541, type: 3}
 --- !u!50 &1242195386662491559
 Rigidbody2D:
   serializedVersion: 4

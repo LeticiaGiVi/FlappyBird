@@ -6,9 +6,13 @@ public class passaro : MonoBehaviour
 {
     Rigidbody2D fisica;
 
+    public SistemaCoracao sistemaCoracao;
+    private Diretor diretor;
+
     private void Awake()
     {
         this.fisica = GetComponent<Rigidbody2D>();
+        this.diretor = FindObjectOfType<Diretor>();
 
     }
     void Update()
@@ -16,6 +20,10 @@ public class passaro : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             this.Impulsionar();
+        }
+        if (sistemaCoracao.vida <= 0)
+        {
+            this.diretor.FinalizarJogo();
         }
 
     }
