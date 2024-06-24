@@ -5,9 +5,9 @@ using UnityEngine;
 public class Gerador : MonoBehaviour
 {
     [SerializeField]
-    public float tempoParaGerar=3;
+    private float tempoParaGerar=3;
 
-    public float cronometro;
+    private float cronometro;
 
     [SerializeField]
     private GameObject modelObstaculo; 

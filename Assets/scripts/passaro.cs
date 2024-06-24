@@ -9,6 +9,7 @@ public class passaro : MonoBehaviour
     private void Awake()
     {
         this.fisica = GetComponent<Rigidbody2D>();
+
     }
     void Update()
     {

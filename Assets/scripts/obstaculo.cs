@@ -5,19 +5,28 @@ using UnityEngine;
 public class obstaculo : MonoBehaviour
 {
     [SerializeField]
-    public float velocidade = 1.9f;
+    public float velocidade = 1.8f;
 
     [SerializeField]
-    public float varairposicaoY;
+    public float variacaoY = 2f;
 
     private void Awake()
     {
-        this.transform.Translate(Vector3.up * Random.Range(-varairposicaoY,varairposicaoY));
-}
-    // Update is called once per frame
+        this.transform.Translate(Vector3.up * Random.Range(-variacaoY, variacaoY));
+    }
+
     void Update()
     {
-        this.transform.Translate(Vector3.left*velocidade* Time.deltaTime);
+        this.transform.Translate(Vector3.left * this.velocidade * Time.deltaTime);
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        this.Destruir();
+    }
+
+    private void Destruir()
+    {
+        Destroy(this.gameObject);
     }
 }
