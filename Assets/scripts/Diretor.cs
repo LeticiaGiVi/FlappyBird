@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Diretor : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject imagemGameOver;
+    private UIDocument document;
+    private Button botaoJogar;
+    private Button botaoMudar;
+
     private passaro passaro;
 
     void Start()
@@ -16,22 +19,7 @@ public class Diretor : MonoBehaviour
     public void FinalizarJogo()
     {
         Time.timeScale = 0;
-        if (imagemGameOver != null)
-        {
-            imagemGameOver.SetActive(true);
-        }
-    }
+            document = GetComponent<UIDocument>();
 
-    public void ReiniciarJogo()
-    {
-        imagemGameOver.SetActive(true);
-        Time.timeScale = 1;
-        passaro.Reiniciar();
-        SistemaCoracao coracao = FindObjectOfType<SistemaCoracao>();
-        if (coracao != null)
-        {
-            coracao.vida = coracao.vidaMax;
-            coracao.SisVida();
-        }
     }
 }
