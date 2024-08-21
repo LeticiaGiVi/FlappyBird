@@ -20,19 +20,11 @@ public class passaro : MonoBehaviour
         this.posicaoInicial = this.transform.position;
 
     }
-    void Update()
-    {
+    void Update(){
         if (Input.GetMouseButtonDown(0))
         {
             this.Impulsionar();
         }
- if (sistemaCoracao != null && sistemaCoracao.vida <= 0)
-    {
-        if (diretor != null)
-        {
-            this.diretor.FinalizarJogo();
-        }
-     }   
 
     }
     private void Impulsionar()

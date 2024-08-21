@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
-public class Tela_de_Start : MonoBehaviour
+public class Menu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private UIDocument document;
+    private Button botaoJogar;
 
-    // Update is called once per frame
-    void Update()
+    void OnPlayGame(ClickEvent evt)
     {
-        
+        SceneManager.LoadScene("Main");
     }
+    private void Awake()
+    {
+        document = GetComponent<UIDocument>();
+        botaoJogar = document.rootVisualElement.Q<Button>("start");
+        botaoJogar.RegisterCallback<ClickEvent>(OnPlayGame);
+    }
+    
 }
